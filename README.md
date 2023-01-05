@@ -1,5 +1,11 @@
 # [Roman.Koshkin.me](https://roman.koshkin.me)
 
+# Notes
+
+- transitioned to ReactJS 18
+- if you clone and get errors, you might need to run
+  `npx @next/codemod new-link . --force` from the project folder. Maybe even several times until the errors disappear.
+
 # next.js course
 
 https://www.youtube.com/watch?v=mTz0GXj8NN0&t=3698s

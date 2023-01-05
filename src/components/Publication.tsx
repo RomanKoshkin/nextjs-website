@@ -1,5 +1,5 @@
 import { LangBadge } from './LangBadge'
-import { PDFBadge, AbstractBadge } from './Badges'
+import { PDFBadge, AbstractBadge, AbstractText } from './Badges'
 import {useState} from 'react'
 
 type Props = React.PropsWithChildren<{
@@ -33,7 +33,8 @@ export function Publication({ title, lang, journal, year, authors, issue, pageRa
 			<p>{children}</p>
 			{ abstract ? <span onClick={onClick}><AbstractBadge/></span>: null }
 			{ abstract ? <span><PDFBadge/></span>: null }
-			{ abstractVisible ? <div><i>{abstract}</i></div>: null }
+			{/* <div className={abstractVisible ? 'fadeIn' : 'fadeOut'}><i>{abstract}</i></div> */}
+			{ abstractVisible ? <div><AbstractText abstract={abstract}/></div>: null }
 		</section>
 	)
 }

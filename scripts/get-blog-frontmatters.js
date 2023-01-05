@@ -11,6 +11,6 @@ module.exports = {
 		return {
 			slug: name.replace(/\.mdx$/, ''),
 			...data,
-		}
+		};
 	}),
 }

@@ -7,10 +7,10 @@ type CustomLinkProps = {
 export function Link({ rel, href, ...props }: CustomLinkProps) {
 	if (href.startsWith('/') || href.startsWith('#')) {
 		return (
-			<NextLink href={href}>
-				<a {...props} />
-			</NextLink>
-		)
+            (<NextLink href={href} {...props}>
+
+            </NextLink>)
+        );
 	}
 
 	return (
