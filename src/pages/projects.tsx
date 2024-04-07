@@ -5,6 +5,7 @@ import { getFileContent } from 'lib/mdx'
 import { Link } from 'components/Link'
 import { Talk } from 'components/Talk'
 import { Project } from 'components/Project'
+import { ProjectWithBadges } from 'components/ProjectWithBadges'
 import RecipeReviewCard from 'components/Comp'
 
 export async function getStaticProps() {
@@ -23,7 +24,7 @@ export async function getStaticProps() {
 type Props = InferGetStaticPropsType<typeof getStaticProps>
 
 export default function About({ meta, source }: Props) {
-	return (
+	return (	
 		<article className="prose dark:prose-dark max-w-full">
 			<svg width="0" height="0" className="hidden" aria-hidden="true">
 				<symbol id="github-icon" viewBox="0 0 16 16" fill="currentColor">
@@ -34,7 +35,7 @@ export default function About({ meta, source }: Props) {
 				</symbol>
 			</svg>
 			<h1>{meta.title}</h1>
-			<MDXRemote {...source} components={{ Link, Talk, Project, RecipeReviewCard }} />
-		</article>
+			<MDXRemote {...source} components={{ Link, Talk, Project, ProjectWithBadges, RecipeReviewCard }} />
+		</article>		
 	)
 }

@@ -2,24 +2,33 @@
 title: Projects
 ---
 
-## Current
+## Recent
 
 <div className="grid sm:grid-cols-2 gap-6">
-	<Project url="https://github.com/RomanKoshkin/Alienify" title="Alienify">
+	<ProjectWithBadges url="https://roman-koshkin.unit.oist.jp/gpt" title="🗡️SwordFish" badges={["NLP", "LLM", "AI"]}>
+  		Locally-run custom-tuned chatbot.
+	</ProjectWithBadges>
+	<ProjectWithBadges url="https://github.com/RomanKoshkin/S2ST" title="🦙TransLLaMa" badges={["NLP", "LLMOps", "machine translation", "MLOps"]}>
+  		LLM-based simultaneous speech-to-text machine translation.
+	</ProjectWithBadges>
+	<ProjectWithBadges url="https://github.com/arayabrain/speech-decoding" title="🔥M/EEG Speech Decoding" badges={["EEG", "contrastive learning", "MLOps"]}>
+		Implementation of MetaAI's model for zero-shot decoding speech from M/EEG signal.
+	</ProjectWithBadges>
+	<ProjectWithBadges url="https://github.com/RomanKoshkin/spiking-autoencoder" title="⚡️⚡️Spiking Autoencoder" badges={["C++", "Python", "computational neuroscience", "SNN"]}>
+		An SNN-based model of episodic memory that encodes sequential information in the form of cell
+		assemblies.
+	</ProjectWithBadges>
+	<ProjectWithBadges url="https://github.com/RomanKoshkin/convSeq" title="🧠convSeq" badges={["DL", "computational neuroscience"]}>
+		A fast and scalable method for detecting spatio-temporal pattern in spike data. Check out the paper and code.
+	</ProjectWithBadges>
+	<ProjectWithBadges url="https://github.com/RomanKoshkin/graphSeq" title="፨graphSeq" badges={["DL", "GNN","computational neuroscience"]}>
+		A graph neural network-based method for embedding spike data into a sequence of fixed size vectors and clustering them based on their self-similarity across time.
+	</ProjectWithBadges>
+	<ProjectWithBadges url="https://github.com/RomanKoshkin/Alienify" title="👽Alienify" badges={["GAN", "GenAI", "Image generation"]}>
 		Image style and content transformation using a GAN. The model blends the orininal StyleGAN2 and
 		the same network but fine-tuned on another dataset (e.g. aliens and zombies). You can train the
 		network on your own dataset.
-	</Project>
-	<Project url="https://github.com/arayabrain/speech-decoding" title="🔥M/EEG Speech Decoding🔥">
-		Reimplementation of a model by MetaAI that decodes (zero-shot) speech from M/EEG.
-	</Project>
-	<Project url="https://github.com/radio-t/radio-t-site" title="SeqNet">
-		A filter optimization-based model for the detection of recurrent sequences in neral recordings.
-	</Project>
-	<Project url="https://reproxy.io" title="Spiking Autoencoder">
-		An SNN-based model of episodic memory that encodes sequential information in the form of cell
-		assemblies.
-	</Project>
+	</ProjectWithBadges>
 </div>
 
 ## Past

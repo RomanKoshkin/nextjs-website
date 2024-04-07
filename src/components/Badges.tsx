@@ -3,13 +3,21 @@ import { motion } from 'framer-motion'
 const animations = {
 	initial: {opacity: 0},
 	animate: {opacity: 1},
-	exit: {opacity: 0}
+	exit: {opacity: 0},
+
 }
 
+// https://www.youtube.com/watch?v=pTinipkJBcs
+// https://www.framer.com/docs/animate-presence/
 export function AbstractText({ abstract }: any) {
 	return (
-		<motion.div variants={animations} initial='initial' animate='animate' exit='exit'>
-			{abstract}
+		<motion.div 
+			variants={animations} 
+			initial='initial' 
+			animate='animate' 
+			exit='exit'
+		>
+			<i>{abstract}</i>
 		</motion.div>
 	)
 }

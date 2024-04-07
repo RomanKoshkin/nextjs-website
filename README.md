@@ -46,3 +46,14 @@ $ cp .env.example .env.local
 - [Tailwind CSS](https://tailwindcss.com/)
 
 Hosted on [Vercel](https://vercel.com), accelerated by [Cloudflare](https://cloundflare.com)
+
+
+# My notes
+
+```bash
+yarn dev
+```
+
+- You can used the `ProjectWithBadges` component for projects both without MDX (as in localhost:3000/test) or with MDX (as in Projects)
+
+- **Routing** don't need the page to be in a router, you can just acces it by directly goint to /that_page (as long as it's in the `pages` folder)
