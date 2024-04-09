@@ -15,7 +15,7 @@ export async function getStaticProps() {
 	return {
 		props: {
 			meta: {
-				title: frontmatter.title,
+				title: (frontmatter as { title?: string }).title || '',
 			},
 			source,
 		},
