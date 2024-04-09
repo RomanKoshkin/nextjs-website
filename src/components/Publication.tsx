@@ -1,6 +1,6 @@
 import { LangBadge } from './LangBadge'
 import { PDFBadge, AbstractBadge, AbstractText } from './Badges'
-import {useState, useEffect} from 'react'
+import { useState, useEffect, useRef } from 'react';
 
 type Props = React.PropsWithChildren<{
 	title: string
@@ -25,15 +25,17 @@ export function Publication({
     children,
 }: Props) {
     const [abstractVisible, setAbstractVisible] = useState(false);
-    const [shouldRender, setShouldRender] = useState(abstractVisible);
+    const [maxHeight, setMaxHeight] = useState('0px');
+    const abstractRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
-        if (abstractVisible) setShouldRender(true);
-    }, [abstractVisible]);
-
-    const onTransitionEnd = () => {
-        if (!abstractVisible) setShouldRender(false);
-    };
+        if (abstractVisible && abstractRef.current) {
+            // Dynamically set maxHeight for the transition when abstract is visible
+            setMaxHeight(`${abstractRef.current.scrollHeight}px`);
+        } else {
+            setMaxHeight('0px'); // Reset maxHeight to enable smooth collapse
+        }
+    }, [abstractVisible, abstractRef.current?.scrollHeight]);
 
     const onClick = () => {
         setAbstractVisible(!abstractVisible);
@@ -41,7 +43,7 @@ export function Publication({
 
     const abstractStyle = {
         transition: 'opacity 0.5s ease, max-height 0.5s ease',
-        maxHeight: abstractVisible ? '500px' : '0', // Adjust max-height for your content
+        maxHeight: abstractVisible ? maxHeight : '0', // Use dynamic maxHeight for smooth animation
         overflow: 'hidden',
         opacity: abstractVisible ? 1 : 0,
     };
@@ -57,17 +59,15 @@ export function Publication({
                 <b>{authors}</b> ({year}) {title} <i>{journal}</i> <b>{issue}</b>:{pageRange}.
             </span>
             <p>{children}</p>
-            {abstract ? (
+            {abstract && (
                 <span onClick={onClick}>
                     <AbstractBadge />
                 </span>
-            ) : null}
-            {abstract ? <span><PDFBadge /></span> : null}
-            {shouldRender && (
-                <div style={abstractStyle} onTransitionEnd={onTransitionEnd}>
-                    <AbstractText abstract={abstract} />
-                </div>
             )}
+            {abstract && <span><PDFBadge /></span>}
+            <div style={abstractStyle} ref={abstractRef}>
+                {abstract && <AbstractText abstract={abstract} />}
+            </div>
         </section>
     );
 }
