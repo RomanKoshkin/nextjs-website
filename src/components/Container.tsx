@@ -93,9 +93,9 @@ export function Container({ children, isHome }: Props) {
 }
 
 const SOCIAL_LINK = [
-	['👤', 'Facebook', 'https://www.facebook.com/akellbl4'],
-	['📷', 'Instagram', 'https://www.instagram.com/akellbl4/'],
-	['🐦', 'Twitter', 'https://twitter.com/akellbl4'],
-	['🐙', 'GitHub', 'https://github.com/akellbl4'],
-	['👨‍💻', 'LinkedIn', 'https://www.linkedin.com/in/akellbl4'],
+	// ['👤', 'Facebook', 'https://www.facebook.com/akellbl4'],
+	['👨‍🎓', 'Scholar', 'https://scholar.google.com/citations?hl=en&user=OpQXH3cAAAAJ&view_op=list_works&sortby=pubdate'],
+	['🐦', 'Twitter', 'https://twitter.com/nightdude4'],
+	['🐙', 'GitHub', 'https://github.com/RomanKoshkin'],
+	['👨‍💻', 'LinkedIn', 'https://www.linkedin.com/in/romankoshkininterpreter/'],
 ]

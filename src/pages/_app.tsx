@@ -7,6 +7,7 @@ import { fetcher } from 'lib/api'
 import { composeMeta } from 'lib/meta'
 import { Container } from 'components/Container'
 import {ThemeProvider} from 'next-themes'
+import { Analytics } from "@vercel/analytics/react"
 
 
 
@@ -86,6 +87,7 @@ export default function MyApp({ Component, pageProps, router }: AppProps) {
 			<ThemeProvider attribute='class'>
 				<Container isHome={path === '/'}>
 					<Component {...pageProps} router={router} />
+          <Analytics/>
 					{/* <div className="flex flex-row items-center justify-center mb-10 w-full">
       					<AnimatedTooltip items={people} />
     				</div> */}

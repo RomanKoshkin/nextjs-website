@@ -50,7 +50,7 @@ export function Publication({
 
     return (
         <section style={{ marginBottom: '20px' }}>
-            <span>
+            <span className="transition-opacity opacity-80 hover:opacity-100">
                 {lang && (
                     <span className="order-2 self-start ml-auto sm:order-none sm:ml-0 sm:mr-2">
                         <LangBadge lang={lang} />{' '}

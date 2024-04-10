@@ -3,7 +3,6 @@ import { redis } from 'lib/redis'
 export async function getViews(slug: string): Promise<string> {
 	const count = await redis.hget('views', slug)
 	console.log(count);
-
 	return count !== null ? count : '1'
 }
 
