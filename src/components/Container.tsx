@@ -98,4 +98,5 @@ const SOCIAL_LINK = [
 	['🐦', 'Twitter', 'https://twitter.com/nightdude4'],
 	['🐙', 'GitHub', 'https://github.com/RomanKoshkin'],
 	['👨‍💻', 'LinkedIn', 'https://www.linkedin.com/in/romankoshkininterpreter/'],
+	['📃', 'CV', '/Koshkin_CV_for_J_.pdf'],
 ]
