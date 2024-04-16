@@ -2,6 +2,7 @@ import { LangBadge } from './LangBadge'
 import { PDFBadge, AbstractBadge, AbstractText } from './Badges'
 import { useState, useEffect, useRef } from 'react';
 
+
 type Props = React.PropsWithChildren<{
 	title: string
 	lang?: string
@@ -11,6 +12,7 @@ type Props = React.PropsWithChildren<{
 	issue: string
 	pageRange: string
 	abstract?: string
+    pdf?: string
 }>
 
 export function Publication({
@@ -23,6 +25,7 @@ export function Publication({
     pageRange,
     abstract,
     children,
+    pdf
 }: Props) {
     const [abstractVisible, setAbstractVisible] = useState(false);
     const [maxHeight, setMaxHeight] = useState('0px');
@@ -48,6 +51,12 @@ export function Publication({
         opacity: abstractVisible ? 1 : 0,
     };
 
+    const onPDFClick = () => {
+        if (pdf) {
+            window.open(pdf, '_blank', 'noopener,noreferrer');
+        }
+    };
+
     return (
         <section style={{ marginBottom: '20px' }}>
             <span className="transition-opacity opacity-80 hover:opacity-100">
@@ -64,7 +73,11 @@ export function Publication({
                     <AbstractBadge />
                 </span>
             )}
-            {abstract && <span><PDFBadge /></span>}
+            {pdf && (
+                <span onClick={onPDFClick}>
+                    <PDFBadge />
+                </span>
+            )}
             <div style={abstractStyle} ref={abstractRef}>
                 {abstract && <AbstractText abstract={abstract} />}
             </div>

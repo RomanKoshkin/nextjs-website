@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: https://pavel.mineev.me/sitemap.xml
+Sitemap: https://roman-koshkin.unit.oist.jp/sitemap.xml

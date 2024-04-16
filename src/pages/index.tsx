@@ -46,8 +46,9 @@ export default function Home() {
 			<p className="block text-md w-[80%] md:w-[85%] sm:text-xl font-medium sm:leading-relaxed text-gray-400">
 				<span className="transition-color duration-300 hover:text-gray-600 dark:hover:text-gray-200">
 				</span>{' '}
-					I am a computational neuroscientist. 
-				<br className="hidden md:inline" />
+				I am a computational neuroscience PhD student at the <Link href="https://oist.jp" className="transition-color duration-300 hover:text-gray-600 dark:hover:text-gray-200"> Neural Coding and Brain Computing Unit</Link> (OIST), which I joined with a vision of building next-gen AI systems that rival the speed and efficiency of biological brains. I am also interested (as a linguist in my previous life) in multi-agent reasoning and simultaneous machine translation. I love making things that work.
+				{/* I am a PhD student at OIST. My research spans biologically-plausible models of the brain and LLM-based simultaneous machine translation.  */}
+				{/* <br className="hidden md:inline" />
 				<span className="transition-color duration-300 hover:text-gray-600 dark:hover:text-gray-200">
 				I <Link
 				 href="/about#projects" 
@@ -58,7 +59,7 @@ export default function Home() {
 				 the principles of neural computation and how they can be used in next-generation AI. {' '}Check out more about me here and in my <Link href="/blog" className="border-b dark:border-gray-600 dark:hover:border-gray-400">
 					 blog
 				</Link>.
-				</span>
+				</span> */}
 			</p>
 		</article>
 	)

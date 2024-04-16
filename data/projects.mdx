@@ -2,26 +2,27 @@
 title: Projects
 ---
 
+## Ongoing
+
+<div className="grid sm:grid-cols-2 gap-6">
+	<ProjectWithBadges url="https://github.com/RomanKoshkin/SoNNet" title="✨SoNNet" badges={["C++", "Python", "AI", "spiking network"]}>
+  		A fast implementation of a recurrent binary spiking neural network written in C++ easily configurable through a Python API. I'm using this code to build biologically plausible and experimentally constrained models of spontaneous activity (SA), which is implicated in memory, spatial navigation and learning.
+	</ProjectWithBadges>
+	<ProjectWithBadges url="https://roman-koshkin.unit.oist.jp/gpt" title="🗡️SwordFish" badges={["NLP", "LLM", "AI"]}>
+  		GPT-like chatbot powered by a locally-run custom-tuned mixture-of-experts model.
+	</ProjectWithBadges>
+</div>
+
 ## Recent
 
 <div className="grid sm:grid-cols-2 gap-6">
-	<ProjectWithBadges url="https://roman-koshkin.unit.oist.jp/gpt" title="🗡️SwordFish" badges={["NLP", "LLM", "AI"]}>
-  		Locally-run custom-tuned chatbot.
+	<ProjectWithBadges url="https://github.com/RomanKoshkin/transllama" title="🦙TransLLaMa" badges={["NLP", "LLMOps", "machine translation", "MLOps"]}>
+  		LLM-based simultaneous speech-to-text machine translation. Decoder-only large language models (LLMs) have recently demonstrated impressive capabilities in text generation and reasoning. Nonetheless, they have limited applications in simultaneous machine translation (SiMT), currently dominated by encoder-decoder transformers. This study demonstrates that, after fine-tuning on a small dataset comprising causally aligned source and target sentence pairs, a pre-trained open-source LLM can control input segmentation directly by generating a special "wait" token. This obviates the need for a separate policy and enables the LLM to perform English-German and English-Russian SiMT tasks with BLEU scores that are comparable to those of specific state-of-the-art baselines. We also evaluated closed-source models such as GPT-4, which displayed encouraging results in performing the SiMT task without prior training (zero-shot), indicating a promising avenue for enhancing future SiMT systems.
 	</ProjectWithBadges>
-	<ProjectWithBadges url="https://github.com/RomanKoshkin/S2ST" title="🦙TransLLaMa" badges={["NLP", "LLMOps", "machine translation", "MLOps"]}>
-  		LLM-based simultaneous speech-to-text machine translation.
-	</ProjectWithBadges>
-	<ProjectWithBadges url="https://github.com/arayabrain/speech-decoding" title="🔥M/EEG Speech Decoding" badges={["EEG", "contrastive learning", "MLOps"]}>
-		Implementation of MetaAI's model for zero-shot decoding speech from M/EEG signal.
-	</ProjectWithBadges>
-	<ProjectWithBadges url="https://github.com/RomanKoshkin/spiking-autoencoder" title="⚡️⚡️Spiking Autoencoder" badges={["C++", "Python", "computational neuroscience", "SNN"]}>
-		An SNN-based model of episodic memory that encodes sequential information in the form of cell
-		assemblies.
-	</ProjectWithBadges>
-	<ProjectWithBadges url="https://github.com/RomanKoshkin/convSeq" title="🧠convSeq" badges={["DL", "computational neuroscience"]}>
+	<ProjectWithBadges url="https://github.com/RomanKoshkin/conv-seq" title="🧠convSeq" badges={["DL", "computational neuroscience"]}>
 		A fast and scalable method for detecting spatio-temporal pattern in spike data. Check out the paper and code.
 	</ProjectWithBadges>
-	<ProjectWithBadges url="https://github.com/RomanKoshkin/graphSeq" title="፨graphSeq" badges={["DL", "GNN","computational neuroscience"]}>
+	<ProjectWithBadges url="https://github.com/RomanKoshkin/graph-seq" title="፨graphSeq" badges={["DL", "GNN","computational neuroscience"]}>
 		A graph neural network-based method for embedding spike data into a sequence of fixed size vectors and clustering them based on their self-similarity across time.
 	</ProjectWithBadges>
 	<ProjectWithBadges url="https://github.com/RomanKoshkin/Alienify" title="👽Alienify" badges={["GAN", "GenAI", "Image generation"]}>
@@ -31,12 +32,19 @@ title: Projects
 	</ProjectWithBadges>
 </div>
 
-## Past
+## Way back
 
-### Neurobarometer
-
-Neurobarometer was a project funded by Neurontrend LLC and the Russian Venture Company to develop an algorithm for objective estimation of people's affective state for neuromarketing research. Based our method (now patented), we built an easy-to-use application that provides a bias-free estimate of respondents' opinion of a product sample based on real-time 32-channel EEG. The first prototype was built in 2019, and the application is now ready and sold to enterprise customers. My responsibilities in this project included developing optimal data preprocessing pipelines and a robust prediction model.
-
-### Human-Robot Interaction
-
-This project explored the ability of stochastic recurrent neural networks trained on a small set of motor primitives to generate meaningful novel patterns with limited corrective feedback from the experimenter.
+<div className="grid sm:grid-cols-2 gap-6">
+	<ProjectWithBadges url="https://github.com/arayabrain/speech-decoding" title="🔥M/EEG Speech Decoding" badges={["EEG", "contrastive learning", "MLOps"]}>
+		Implementation of MetaAI's model for zero-shot decoding speech from M/EEG signal. I did this project during my research internship at Araya, where I contributed to re-implementing a model that decodes speech from non-invasive brain recordings (M/EEG), zero-shot.
+	</ProjectWithBadges>
+	<ProjectWithBadges url="https://github.com/RomanKoshkin/robo" title="Virtual Robot" badges={["CNN", "RNN", "VREP", "computer vision"]}>
+		This project used convolutional and recurrent neural networks (RNN) in a visually-guided robot control task. CNNs work best when used for visual feature extraction from raw pixels, while RNNs are capable of capturing temporal dependencies and can make 'decisions' based on previously encountered states. This property is essential for stateful agents, i.e. those capable of making appropriate choices given not only the current but also a sequence of prior states. A case in point is a robot that has the seemingly simple task of following a figure-of-eight-shaped track. When such a robot moves along the track and reaches the intersection of two lines it must continue to move naturally along the track without getting stuck in one lap of the figure of eight. This is only possible if the model that maps the robot's current position to the wheels' speeds takes into account not only were the robot is, but also where it was a few moments before. In what follows below I describe my project in which a simulated robot was controlled by a CNN-RNN model. The model was able to reach satisfactory performance and even some robustness against mild visual noise and mild physical disturbances knocking the robot off the track.
+	</ProjectWithBadges>
+	<ProjectWithBadges url="https://github.com/RomanKoshkin/NeuroBarometer" title="🧭NeuroBarometer" badges={["Python", "EEG", "ML/DL", "signal processing"]}>
+		Neurobarometer was a project funded by Neurontrend LLC and the Russian Venture Company to develop an algorithm for objective estimation of people's affective state for neuromarketing research. Based our method (now patented), we built an easy-to-use application that provides a bias-free estimate of respondents' opinion of a product sample based on real-time 32-channel EEG. The first prototype was built in 2019, and the application is now ready and sold to enterprise customers. My responsibilities in this project included developing optimal data preprocessing pipelines and a robust prediction model.
+	</ProjectWithBadges>
+	<ProjectWithBadges url="https://github.com/RomanKoshkin/human-robot-interaction" title="🦾ToRobo" badges={["Python", "robotics", "ML/DL", "computer vision"]}>
+		This project explored the ability of recurrent neural networks trained on a small set of motor primitives to generate meaningful novel patterns with limited corrective feedback from the experimenter.
+	</ProjectWithBadges>
+</div>

@@ -10,7 +10,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/akellbl4/pavel.mineev.me"
+    "url": "git+https://github.com/RomanKoshkin/nextjs-website"
   },
   "scripts": {
     "dev": "next",

@@ -35,23 +35,23 @@ export function Container({ children, isHome }: Props) {
 					</a>
 					<nav className="text-sm sm:text-base">
 						<ul className="flex w-full space-x-4">
-							<li className="nav-link">
+							<li className="nav-link transition-opacity opacity-80 hover:opacity-100">
 								<ActiveLink href="/blog">Blog</ActiveLink>
 							</li>
-							<li className="nav-link">
+							<li className="nav-link transition-opacity opacity-80 hover:opacity-100">
 								<ActiveLink href="/research">Research</ActiveLink>
 							</li>
-							<li className="nav-link">
+							<li className="nav-link transition-opacity opacity-80 hover:opacity-100">
 								<ActiveLink href="/projects">Projects</ActiveLink>
 							</li>
-							<li className="nav-link">
-								<ActiveLink href="/publications">Publications</ActiveLink>
+							<li className="nav-link transition-opacity opacity-80 hover:opacity-100">
+								<ActiveLink href="/publications">Publications & Patents</ActiveLink>
 							</li>
-							<li className="nav-link">
+							<li className="nav-link transition-opacity opacity-80 hover:opacity-100">
 								<ActiveLink href="/about">About</ActiveLink>
 							</li>
 							{!isHome && (
-								<li className="nav-link">
+								<li className="nav-link transition-opacity opacity-80 hover:opacity-100">
 									<ActiveLink href="/">Home</ActiveLink>
 								</li>
 							)}

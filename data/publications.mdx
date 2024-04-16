@@ -4,7 +4,42 @@ title: Publications & Patents
 
 ---
 
-## Peer-reviewed Journal Publications
+## Pre-prints
+
+<Publication
+	title="TransLLaMa: LLM-based Simultaneous Translation System."
+	year="2024"
+	journal="arXiv"
+	issue=""
+	pageRange="2402.04636"
+	authors="Roman Koshkin, Katsuhito Sudoh & Satoshi Nakamura"
+	abstract="Decoder-only large language models (LLMs) have recently demonstrated impressive capabilities in text generation and reasoning. Nonetheless, they have limited applications in simultaneous machine translation (SiMT), currently dominated by encoder-decoder transformers. This study demonstrates that, after fine-tuning on a small dataset comprising causally aligned source and target sentence pairs, a pre-trained open-source LLM can control input segmentation directly by generating a special 'wait' token. This obviates the need for a separate policy and enables the LLM to perform English-German and English-Russian SiMT tasks with BLEU scores that are comparable to those of specific state-of-the-art baselines. We also evaluated closed-source models such as GPT-4, which displayed encouraging results in performing the SiMT task without prior training (zero-shot), indicating a promising avenue for enhancing future SiMT systems."
+	pdf="https://arxiv.org/pdf/2402.04636.pdf"
+/>
+
+<Publication
+	title="convSeq: Fast and Scalable Method for Detecting Patterns in Spike Data."
+	year="2024"
+	journal="arXiv"
+	issue=""
+	pageRange="2402.01130"
+	authors="Roman Koshkin, Tomoki Fukai"
+	abstract="Spontaneous neural activity, crucial in memory, learning, and spatial navigation, often manifests itself as repetitive spatiotemporal patterns. Despite their importance, analyzing these patterns in large neural recordings remains challenging due to a lack of efficient and scalable detection methods. Addressing this gap, we introduce convSeq, an unsupervised method that employs backpropagation for optimizing spatiotemporal filters that effectively identify these neural patterns. Our method's performance is validated on various synthetic data and real neural recordings, revealing spike sequences with unprecedented scalability and efficiency. Significantly surpassing existing methods in speed, convSeq sets a new standard for analyzing spontaneous neural activity, potentially advancing our understanding of information processing in neural circuits."
+	pdf="https://arxiv.org/pdf/2402.01130.pdf"
+/>
+
+## Peer-reviewed Publications
+
+<Publication
+	title="Unsupervised Detection of Cell Assemblies with Graph Neural Networks."
+	journal="ICLR"
+	year="2023"
+	authors="Roman Koshkin, Tomoki Fukai"
+	issue=""
+	pageRange="TPT"
+	abstract="Cell assemblies, putative units of neural computation, manifest themselves as repeating and temporally coordinated activity of neurons. However, understanding of their role in brain function is hampered by a lack of scalable methods for their unsupervised detection. We propose using a graph neural network for embedding spike data into a sequence of fixed size vectors and clustering them based on their self-similarity across time. We validate our method on synthetic data and real neural recordings."
+	pdf="https://openreview.net/pdf?id=Tbzv_BbjjO8"
+/>
 
 <Publication
 	title="Testing the Efforts Model of Simultaneous Interpreting"
@@ -29,14 +64,15 @@ title: Publications & Patents
 ## Patents
 
 <Publication
-	title="Commentary: Functional Connectivity in the Left Dorsal Stream Facilitates Simultaneous Language Translation: An EEG Study"
+	title="Electroencephalographic method and system of objective estimation of listeners’ reaction to audio content based on a range of voluntary affective categories."
 	lang="ru"
-	journal="Frontiers in Human Neuroscience"
+	journal=""
 	year="2020"
-	authors="Roman Koshkin & Alex Ossadtchi"
-	issue="11(2)"
-	pageRange="273"
-	abstract="We utilized the event-related potential (ERP) technique to study neural activity associated with different levels of working memory (WM) load during simultaneous interpretation (SI) of continuous prose. The amplitude of N1 and P1 components elicited by task-irrelevant tone probes was significantly modulated as a function of WM load but not the direction of interpretation. Furthermore, the latency of the P1 increased significantly with WM load. The WM load effect on N1 latency, however, did not reach significance. Larger negativity under lower WM loads suggests that more attention is available to process the source message, providing the first electrophysiological evidence in support of the Efforts Model of SI. Relationships between the direction of interpretation and median WM load are also discussed."
+	authors="Roman Koshkin, Mariya Volodina, Alex Ossadtchi"
+	issue="RF Patent"
+	pageRange="2747571"
+	abstract="The invention relates to marketing technologies, and allows, based on the psychophysiological state, measured using an electrocephalograph, to objectively assess the listener's reaction to audio content according to an arbitrary range of affective categories (such as interest in, emotion to, agreement/disagreement with the content played etc.) , when conducting opinion polls, focus groups, as well as for educational process. The technical result achieved consists in obtaining an objective psychophysiological metric that allows one to judge how carefully the presented audio content was listened to, as well as its rating (in comparison with alternative audio content), and without the use of questionnaires, surveys or other methods prone to cognitive biases. The technical result is achieved due to the fact that the decision rule for decision trees is optimized based on the psychophysiological state, measured using an, recorded while a group of listeners listen to reference audio messages, selected from a pre-created database of reference audio messages and their corresponding affective ratings (being an integral part of the database) collected in a preliminary survey of a large group of respondents."
+	pdf="https://fips.ru/EGD/97573530-a79d-499c-a6d2-c3b008f5ff42"
 />
 
 ## Conference Proceedings

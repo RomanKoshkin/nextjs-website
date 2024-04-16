@@ -5,6 +5,7 @@ import { Link } from 'components/Link'
 type Props = React.PropsWithChildren<{
 	url: string
 	title: string
+	children: string
 	badges: string[] // Adding a prop for badges
   }>
   
@@ -12,7 +13,6 @@ type Props = React.PropsWithChildren<{
 	return (
 	  <section className="project relative block px-4 py-3 -mx-3 sm:mx-0 sm:px-6 sm:py-5 border border-gray-100 dark:border-gray-700 rounded-lg transition-shadow duration-200 hover:shadow-xl dark:transform dark:transition-transform dark:hover:-translate-y-1">
 		<h3 className="flex items-center mb-2 text-xl font-bold">
-			{/* <img src='network-svgrepo-com.svg' alt="Your description" style={{ height: '1em' }} className="mr-1" /> */}
 		  <Link href={url} className="block-link">
 			{title}
 		  </Link>
@@ -21,7 +21,7 @@ type Props = React.PropsWithChildren<{
 			dangerouslySetInnerHTML={{ __html: `<use xlink:href="#github-icon"></use>` }}
 		  />
 		</h3>
-		<p>{children}</p>
+		<p className="line-clamp-3">{children}</p>
 		{/* Badge container */}
 		<div className="mt-4 flex gap-2">
 		  {badges.map(badge => (

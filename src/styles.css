@@ -218,3 +218,13 @@ h6 {
 		background-position: 200% center;
 	}
 }
+
+.line-clamp-3 {
+	overflow: hidden;
+	max-height: 3.3em; /* Adjust this based on your line height to approximately fit three lines */
+	transition: max-height 1.3s ease;
+  }
+  
+  .project:hover .line-clamp-3 {
+	max-height: 1000px; /* Set to a value high enough to contain all your content */
+  }
