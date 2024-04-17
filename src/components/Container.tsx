@@ -1,3 +1,5 @@
+import React, { useState, useEffect } from 'react';
+
 import clsx from 'clsx'
 import { Link } from 'components/Link'
 import { NowPlaying } from 'components/NowPlaying'
@@ -13,60 +15,78 @@ type Props = React.PropsWithChildren<{
 
 export function Container({ children, isHome }: Props) {
 	const {theme, setTheme} = useTheme()
+	const [isScrolled, setIsScrolled] = useState(false);
 
 	// this is called by onClick
 	function changeTheme(theme: any) {
 		setTheme(theme === 'light' ? 'dark': 'light')
 	}
 
+
+	useEffect(() => {
+        const handleScroll = () => {
+            setIsScrolled(window.scrollY > 0);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
 	return (
 		<>
 			<div
 				className={clsx(
 					'h-full w-full  m-auto p-6 flex-grow flex flex-col max-w-3xl lg:max-w-4xl',
-					isHome && 'max-h-[44rem]'
+					isHome && '' // on Home, 'max-h-[44rem]' class was added. I got rid of that.
 				)}
 			>
-				<header>
+				<header className={clsx('navbar', { 'transparent': isScrolled })}>
 					<div className="container">
 						<div className="align-left"> 
-					<a href="#skip" className="sr-only focus:not-sr-only">
-						Skip to content
-					</a>
-					<nav className="text-sm sm:text-base">
-						<ul className="flex w-full space-x-4">
-							<li className="nav-link transition-opacity opacity-80 hover:opacity-100">
-								<ActiveLink href="/blog">Blog</ActiveLink>
-							</li>
-							<li className="nav-link transition-opacity opacity-80 hover:opacity-100">
-								<ActiveLink href="/research">Research</ActiveLink>
-							</li>
-							<li className="nav-link transition-opacity opacity-80 hover:opacity-100">
-								<ActiveLink href="/projects">Projects</ActiveLink>
-							</li>
-							<li className="nav-link transition-opacity opacity-80 hover:opacity-100">
-								<ActiveLink href="/publications">Publications & Patents</ActiveLink>
-							</li>
-							<li className="nav-link transition-opacity opacity-80 hover:opacity-100">
-								<ActiveLink href="/about">About</ActiveLink>
-							</li>
-							{!isHome && (
-								<li className="nav-link transition-opacity opacity-80 hover:opacity-100">
-									<ActiveLink href="/">Home</ActiveLink>
-								</li>
-							)}
-						</ul>
-					</nav>
+							<a href="#skip" className="sr-only focus:not-sr-only">
+								Skip to content
+							</a>
+							<div className="nav-container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+								<div className="nav-links" style={{ overflowX: 'auto', flex: 1 }}>
+									<nav className="text-sm sm:text-base">
+										<ul className="flex w-full space-x-4">
+											{/* blog exists, but is hidden from the navbar */}
+											{/* <li className="nav-link transition-opacity opacity-80 hover:opacity-100">
+												<ActiveLink href="/blog">Blog</ActiveLink>
+											</li> */}
+											<li className="nav-link transition-opacity opacity-80 hover:opacity-100">
+												<ActiveLink href="/research">Research</ActiveLink>
+											</li>
+											<li className="nav-link transition-opacity opacity-80 hover:opacity-100">
+												<ActiveLink href="/projects">Projects</ActiveLink>
+											</li>
+											<li className="nav-link transition-opacity opacity-80 hover:opacity-100">
+												<ActiveLink href="/publications">Publications</ActiveLink>
+											</li>
+											<li className="nav-link transition-opacity opacity-80 hover:opacity-100">
+												<ActiveLink href="/about">About</ActiveLink>
+											</li>
+											{!isHome && (
+											<li className="nav-link transition-opacity opacity-80 hover:opacity-100">
+												<ActiveLink href="/">Home</ActiveLink>
+											</li>
+											)}
+										</ul>
+									</nav>
+								</div>
+								<div style={{ display: 'flex', justifyContent: 'flex-end', padding: '0 0 0 10px'}}
+										className="light:bg-white text-dark dark:text-white"
+										onClick={() => changeTheme(theme)}>
+										{theme === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
+								</div>
+							</div>
+						</div>
 					</div>
-					<div style={{ display: 'flex', justifyContent: 'flex-end' }}
-						className="light:bg-white text-dark dark:text-white"
-									onClick={() => changeTheme(theme)}>
-									{theme === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
-					</div>
-
-				</div>
 				</header>
-				<main id="skip" className="flex flex-col flex-grow py-12">
+				<main id="skip" className="flex flex-col flex-grow py-12" style={{ marginTop: '70px' }}>
 					{children}
 				</main>
 				<footer className="flex mb-4 text-sm sm:text-base flex-col justify-between sm:flex-row sm:items-end">
