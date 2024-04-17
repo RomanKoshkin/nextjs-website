@@ -50,15 +50,7 @@ export default function MyApp({ Component, pageProps, router }: AppProps) {
 				src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GTAG_ID}`}
 				strategy="afterInteractive"  // Loads the script after the page becomes interactive
 			/>
-			<Script id="google-analytics" strategy="afterInteractive">
-				{`
-				window.dataLayer = window.dataLayer || [];
-				function gtag(){dataLayer.push(arguments);}
-				gtag('js', new Date());
-				gtag('config', '${process.env.NEXT_PUBLIC_GTAG_ID}');
-				`}
-			</Script>
-
+			<Script id="google-analytics" src="/analytics.js"/>
 			<ThemeProvider attribute='class'>
 				<Container isHome={path === '/'}>
 					<Component {...pageProps} router={router} />
