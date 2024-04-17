@@ -14,7 +14,7 @@
   },
   "scripts": {
     "dev": "next",
-    "build": "next build",
+    "build": "node scripts/replaceAnalyticsId.js && next build",
     "start": "next start",
     "lint": "next lint",
     "serve": "npm run build && npm run start",
@@ -28,6 +28,7 @@
     "@vercel/analytics": "^1.2.2",
     "clsx": "^2.1.0",
     "date-fns": "^2.22.1",
+    "dotenv": "^16.4.5",
     "framer-motion": "^11.0.12",
     "gray-matter": "^4.0.3",
     "ioredis": "^4.27.6",
