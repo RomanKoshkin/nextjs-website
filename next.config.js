@@ -1,4 +1,5 @@
 const headers = [
+	// set the content security policy here, or comment it out here, but set in your server (NGINX, Apache, etc)
 	{
 		key: 'Content-Security-Policy',
 		value:
