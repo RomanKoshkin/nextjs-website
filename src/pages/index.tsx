@@ -70,6 +70,6 @@ export default function Home() {
 }
 
 Home.meta = {
-	title: 'Roman Koshkin - Computational Neuroscience, Bio-inspired AI, Deep Learning',
+	title: 'Bio-inspired AI | NLP | Simultaneous Machine Translation',
 	overrideTitle: true,
 }

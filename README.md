@@ -14,6 +14,7 @@ $ yarn
 $ yarn dev
 $ cp .env.example .env.local
 ```
+
 Edit the `.env.local`: specify the URL, port and password to your Redis database. I'm hosting mine on an [AWS EC2](https://aws.amazon.com/pm/ec2/?gclid=Cj0KCQjwztOwBhD7ARIsAPDKnkBNwCckd88iZw_ImrQtJ6NdJtz0urX3r8iVv5l8Y1pMtaZLswwbYYgaAjWBEALw_wcB&trk=8d7982dd-fe3b-4952-ae11-337e59d552aa&sc_channel=ps&ef_id=Cj0KCQjwztOwBhD7ARIsAPDKnkBNwCckd88iZw_ImrQtJ6NdJtz0urX3r8iVv5l8Y1pMtaZLswwbYYgaAjWBEALw_wcB:G:s&s_kwcid=AL!4422!3!530706572075!e!!g!!aws%20ec2!13705463409!124614255496) micro instance. You can host Redis anywhere, just make sure you can access it.
 
 ## Built Using
@@ -36,6 +37,12 @@ Hosted on [Vercel](https://vercel.com), accelerated by [Cloudflare](https://clou
 
 From the very start to not so long ago my site was just several links to my social media and contacts. Since I started to write about development I decided to have my place where I can write what I want. So, I decided to use Next.js, Tailwind, and MDX as the base for my website.
 
+# Analytics
+
+If you deploy on Vercel, just uncomment the `<Analytics/>` tag in `_app.tsx`. If you want to use Google Analytics, uncomments the `<Script>` tags in `_app.tsx`.
+
 # Credits
 
 This website was built off Pavel Mineev's work. Check out his [GitHub](https://github.com/akellbl4). 
+
+

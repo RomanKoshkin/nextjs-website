@@ -1,3 +1,7 @@
+import React  from "react";
+import Script from 'next/script'
+
+
 import Head from 'next/head'
 import { SWRConfig } from 'swr'
 import type { AppProps } from 'next'
@@ -7,11 +11,11 @@ import { fetcher } from 'lib/api'
 import { composeMeta } from 'lib/meta'
 import { Container } from 'components/Container'
 import {ThemeProvider} from 'next-themes'
-import { Analytics } from "@vercel/analytics/react"
+
+// import { Analytics } from "@vercel/analytics/react"
 
 
 
-import React from "react";
 
 
 export default function MyApp({ Component, pageProps, router }: AppProps) {
@@ -40,15 +44,25 @@ export default function MyApp({ Component, pageProps, router }: AppProps) {
 				<link href={meta.canonical} rel="canonical" />
 				{meta.date && <meta property="article:published_time" content={meta.date} />}
 			</Head>
+			{/* <Analytics/> for Vercel*/}
+			{/* For Google Analytics */}
+			<Script
+				src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GTAG_ID}`}
+				strategy="afterInteractive"  // Loads the script after the page becomes interactive
+			/>
+			<Script id="google-analytics" strategy="afterInteractive">
+				{`
+				window.dataLayer = window.dataLayer || [];
+				function gtag(){dataLayer.push(arguments);}
+				gtag('js', new Date());
+				gtag('config', '${process.env.NEXT_PUBLIC_GTAG_ID}');
+				`}
+			</Script>
+
 			<ThemeProvider attribute='class'>
 				<Container isHome={path === '/'}>
 					<Component {...pageProps} router={router} />
-          <Analytics/>
-					{/* <div className="flex flex-row items-center justify-center mb-10 w-full">
-      					<AnimatedTooltip items={people} />
-    				</div> */}
 				</Container>
-				
 			</ThemeProvider>
 		</SWRConfig>
 	)
