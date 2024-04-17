@@ -39,7 +39,7 @@ From the very start to not so long ago my site was just several links to my soci
 
 # Analytics
 
-If you deploy on Vercel, just uncomment the `<Analytics/>` tag in `_app.tsx`. If you want to use Google Analytics, uncomments the `<Script>` tags in `_app.tsx`.
+If you deploy on Vercel, just uncomment the `<Analytics/>` tag in `_app.tsx`. If you want to use Google Analytics, uncomments the `<Script>` tags in `_app.tsx`. Be sure to define your Google Analytics tag in `env.local`.
 
 # Credits
 
