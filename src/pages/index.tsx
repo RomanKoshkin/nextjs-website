@@ -11,8 +11,8 @@ export default function Home() {
 			<Link href="/about" className="inline-block text-gray-800">
 				<h1 className="title relative inline-flex flex-col-reverse sm:flex-row mb-3">
 					<div className="relative inline-block text-4xl sm:text-7xl md:text-8xl lg:text-8xl font-bold tracking-tight">
-						<span className="title-gradient">Roman Koshkin</span>
-						<span className="title-cover absolute inset-0 transition-opacity duration-500">
+						<span className="title-cover">Roman Koshkin</span>
+						<span className="title-gradient absolute inset-0 transition-opacity duration-500">
 							Roman Koshkin
 						</span>
 					</div>
