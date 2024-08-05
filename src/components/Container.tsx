@@ -69,6 +69,9 @@ export function Container({ children, isHome }: Props) {
 											<li className="nav-link transition-opacity opacity-80 hover:opacity-100">
 												<ActiveLink href="/about">About</ActiveLink>
 											</li>
+											<li className="nav-link transition-opacity opacity-80 hover:opacity-100">
+												<ActiveLink href="https://roman-koshkin.unit.oist.jp/gpt">🤖AI Chat</ActiveLink>
+											</li>
 											{!isHome && (
 											<li className="nav-link transition-opacity opacity-80 hover:opacity-100">
 												<ActiveLink href="/">Home</ActiveLink>
