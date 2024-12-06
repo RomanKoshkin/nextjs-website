@@ -46,7 +46,7 @@ module.exports = {
 			},
 			{
 				source: '/resume',
-				destination: '/resume-2022.pdf',
+				destination: '/RESUME.pdf',
 				permanent: false,
 			},
 			...externalPosts,
